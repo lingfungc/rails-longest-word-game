@@ -17,6 +17,7 @@
 .container {
   width: 90%;
   margin: 0 auto;
+  font-family: 'Sono', sans-serif;
 }
 
 h2 {
@@ -31,9 +32,12 @@ h2 {
  .letter-card {
   background-color: aqua;
   aspect-ratio : 1 / 1;
-  width: 10%;
+  width: 5%;
   margin-right: 50px;
+  font-size: 1.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
  }
