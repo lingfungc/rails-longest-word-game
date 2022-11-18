@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+h2 {
+  line-height: 3rem;
+}
+
+.letter-container {
+  display: flex;
+  width: 100%;
+}
+
+ .letter-card {
+  background-color: aqua;
+  aspect-ratio : 1 / 1;
+  width: 10%;
+  margin-right: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }

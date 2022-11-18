@@ -1,2 +1,13 @@
-<h1>Games#new</h1>
-<p>Find me in app/views/games/new.html.erb</p>
+<div class="container">
+
+  <h2>New Longest Word Game</h2>
+
+  <div class="letter-container">
+    <% @letters.each do |letter| %>
+      <div class="letter-card">
+        <h4><%= letter %></h4>
+      </div>
+    <% end %>
+  </div>
+
+</div>
