@@ -10,9 +10,9 @@ class GamesController < ApplicationController
   end
 
   def score
-    # @letters = params[:letters].split
-    # @word = (params[:word] || "").upcase
-    # @included = included?(@word, @letters)
+    @letters = params[:letters].split
+    @answer = (params[:answer] || '').upcase
+    @check = check?(@answer, @letters)
     # @english_word = english_word?(@word)
     @params = params
     # raise
@@ -20,8 +20,11 @@ class GamesController < ApplicationController
 
   private
 
-  def included?(word, letters)
-    word.chars.all? { |letter| word.count(letter) <= letters.count(letter) }
+  def check?(answer, letters)
+    # make answer into a array of characters
+    # iterate each character to check the number of these characters in this answer array and the letters (the question array)
+    # the number in answer array should be less or equal than the question array
+    answer.chars.all? { |letter| answer.count(letter) <= letters.count(letter) }
   end
 
   def english_word?(word)
