@@ -11,5 +11,4 @@ Capybara.register_driver :headless_chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end
 Capybara.save_path = Rails.root.join('tmp/capybara')
-Capybara.javascript_driver = :headless_chromeer methods to be used by all tests here...
-end
+Capybara.javascript_driver = :headless_chrome
