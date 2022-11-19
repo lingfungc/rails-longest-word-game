@@ -10,4 +10,20 @@
     <% end %>
   </div>
 
+  <div class="user-input">
+
+  <%= form_with url: '/score', data: { turbo: false } do |f| %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+    <div class="">
+      <%= f.label :answer, 'What\'s your longest word?' %>
+      <%= f.text_field :answer %>
+    </div>
+    <div class="">
+      <%= f.submit "Play" %>
+    </div>
+  <% end %>
+
+  </div>
+
 </div>
