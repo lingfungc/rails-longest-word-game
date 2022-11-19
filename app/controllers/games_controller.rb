@@ -21,7 +21,11 @@ class GamesController < ApplicationController
     @answer = (params[:answer] || '').upcase
     @check = check?(@answer, @letters)
     @english_word = english_word?(@answer)
-    @params = params
+    if @check && @english_word
+      @score = @answer.length * @answer.length / @timer + 50
+    else
+      @score = 0
+    end
     # raise
   end
 
