@@ -22,7 +22,7 @@ class GamesController < ApplicationController
     @check = check?(@answer, @letters)
     @english_word = english_word?(@answer)
     if @check && @english_word
-      @score = @answer.length * @answer.length / @timer + 50
+      @score = @answer.length ** 3 / @timer + 50
     else
       @score = 0
     end

@@ -2,7 +2,7 @@
 
   <h1>Result</h1>
 
-  <% if @included %>
+  <% if @check %>
     <% if @english_word %>
       <p><strong>Congratulations!</strong> <%= @answer %> is a valid English word!</p>
     <% else %>
@@ -12,8 +12,8 @@
     <p>Sorry but <strong><%= @answer %></strong> can't be built out of <%= @letters.join(", ") %></p>
   <% end %>
 
-  <p><strong>You used </strong> <%= @timer.floor(2) %> seconds to answer!</p>
-  <p><strong>Your score is </strong> <%= @score %> !</p>
+  <p><strong>You used </strong> <%= @timer.floor(1) %> seconds.</p>
+  <p><strong>Your score is </strong> <%= @score.floor(1) %>!</p>
 
   <%= link_to "Play again", new_path %>
 
