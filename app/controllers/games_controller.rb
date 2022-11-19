@@ -13,7 +13,7 @@ class GamesController < ApplicationController
     @letters = params[:letters].split
     @answer = (params[:answer] || '').upcase
     @check = check?(@answer, @letters)
-    # @english_word = english_word?(@word)
+    @english_word = english_word?(@answer)
     @params = params
     # raise
   end
@@ -27,9 +27,9 @@ class GamesController < ApplicationController
     answer.chars.all? { |letter| answer.count(letter) <= letters.count(letter) }
   end
 
-  def english_word?(word)
-    response = URI.open("https://wagon-dictionary.herokuapp.com/#{word}")
-    json = JSON.parse(response.read)
+  def english_word?(answer)
+    dictionary = URI.open("https://wagon-dictionary.herokuapp.com/#{answer}")
+    json = JSON.parse(dictionary.read)
     json['found']
   end
 end
