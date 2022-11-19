@@ -11,6 +11,7 @@
   <% else %>
     <p>Sorry but <strong><%= @answer %></strong> can't be built out of <%= @letters.join(", ") %></p>
   <% end %>
+  <p><strong>You used </strong> <%= @timer.floor(2) %> seconds to answer!</p>
   <%= link_to "Play again", new_path %>
 
 </div>

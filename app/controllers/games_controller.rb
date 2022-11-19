@@ -12,9 +12,11 @@ class GamesController < ApplicationController
     @letters = Array.new(5) { VOWELS.sample }
     @letters += Array.new(5) { (('A'..'Z').to_a - VOWELS).sample }
     @letters.shuffle!
+    @start_time = Time.now
   end
 
   def score
+    @timer = Time.now - params[:time].to_datetime
     @letters = params[:letters].split
     @answer = (params[:answer] || '').upcase
     @check = check?(@answer, @letters)
